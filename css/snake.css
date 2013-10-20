@@ -1,0 +1,18 @@
+body {
+  background: white url('../img/bg.jpg') repeat left top;
+  background-attachment: fixed;
+}
+#game-canvas {
+  background: white url('../img/grass.jpg') no-repeat;
+}
+.app-heading {
+  color: brown;
+  text-shadow: 2px 2px #FAA732;
+}
+#app-heading-inside {
+  background: url('../img/title_bg.png') no-repeat;
+  display: block;
+  position: relative;
+  width: 1235px;
+  height: 60px;
+}

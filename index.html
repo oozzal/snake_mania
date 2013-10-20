@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Snake</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/snake.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <center><h1 id="app-heading-inside" class="app-heading">SnakeMania</h1></center>
+            <hr />
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="alert alert-success">
+                        <h4>Controls</h4><br />
+                        <div class="alert alert-info">
+                            <div class="row-fluid">
+                                <div class="span5"><b>Pause:</b></div>
+                                <div class="span7">Space</div>
+                            </div>
+                        </div>
+                        <div id="snake1-info" class="alert">
+                            <h5 id="snake1-info-heading" class="alert alert-danger">Left Snake Controls</h5>
+                            <div class="alert alert-info">
+                                <div class="row-fluid">
+                                    <div class="span5"><b>Left:</b></div>
+                                    <div class="span7">Left Arrow</div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span5"><b>Right:</b></div>
+                                    <div class="span7">Right Arrow</div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span5"><b>Up:</b></div>
+                                    <div class="span7">Up Arrow</div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span5"><b>Down:</b></div>
+                                    <div class="span7">Down Arrow</div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div id="snake2-info" class="alert">
+                            <h5 class="alert alert-danger">Right Snake Controls</h5>
+                            <div class="alert alert-info">
+                                <div class="row-fluid">
+                                    <div class="span5"><b>Left:</b></div>
+                                    <div class="span7">A</div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span5"><b>Right:</b></div>
+                                    <div class="span7">D</div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span5"><b>Up:</b></div>
+                                    <div class="span7">W</div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span5"><b>Down:</b></div>
+                                    <div class="span7">S</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div class="row-fluid">
+                        <canvas height="462" width="649" id="game-canvas" class="alert">Your browser doesn't support HTML5 Canvas</canvas>
+                        <audio id="ouch_boy">
+                            <source src="sound/ouch_boy.mp3" type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                        </audio>
+                        <audio id="ouch_girl">
+                            <source src="sound/ouch_girl.mp3" type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                        </audio>
+                        <audio id="ouch_kid">
+                            <source src="sound/ouch_kid.mp3" type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                        </audio>
+                        <audio id="yes_boy">
+                            <source src="sound/yes_boy.mp3" type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                        </audio>
+                        <audio id="yes_girl">
+                            <source src="sound/yes_girl.mp3" type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                        </audio>
+                        <audio id="yummy_kid">
+                            <source src="sound/yummy_kid.mp3" type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                        </audio>
+                        <audio id="game_over">
+                            <source src="sound/game_over.mp3" type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="row-fluid">
+                        <!--     start modal start       -->
+                        <div class="modal hide" id="start-modal">
+                            <div class="modal-header alert-danger">
+                                <button type="button" class="close" data-dismiss="modal">x</button>
+                                <h2 class="app-heading">Welcome to SnakeMania</h2>
+                            </div>
+                            <div class="modal-body alert-success">
+                                <h4>You could now compete even in a snake game!!!</h4>
+                            </div>
+                            <div class="modal-footer alert-danger">
+                                <a href="#" id="start_btn" class="hide pull-left btn btn-success" data-dismiss="modal">Start Game</a>
+                                <a href="#" id="one_player_btn" class="pull-left btn btn-info">One Player</a>
+                                <a href="#" id="two_player_btn" class="pull-left btn btn-info">Two Player</a>
+                            </div>
+                        </div>
+                        <!--     start modal end     -->
+                    </div>
+                    <div class="row-fluid">
+                        <!--     end modal start       -->
+                        <div class="modal hide" id="info-modal">
+                            <div class="modal-header alert-danger">
+                                <button type="button" class="close" data-dismiss="modal">x</button>
+                                <h1 id="score-display"></h1>
+                                <h1 id="score-message-heading">Nice Attempt!</h1>
+                            </div>
+                            <div class="modal-body alert-success">
+                                <h3 id="score-message-body">Don't worry, it takes time to become a pro! . .</h3><br />
+                                <h2><em>Try Again!!</em></h2>
+                            </div>
+                            <div class="modal-footer alert-danger">
+                                <a href="#" class="pull-left btn btn-success" onclick="window.location.reload();">Play Again</a>
+                                <a href="#" class="btn btn-danger" data-dismiss="modal" onclick="window.close();">Close</a>
+                            </div>
+                        </div>
+                        <!--    end modal end     -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/jquery.min.js"></script>
+        <script src='js/jquery-ui.min.js'></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/snake.js"></script>
+    </body>
+</html>
